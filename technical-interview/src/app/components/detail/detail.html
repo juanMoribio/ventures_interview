@@ -1,0 +1,99 @@
+<section class="mx-auto max-w-7xl px-6 py-10">
+
+  <div class="mb-8 flex items-center justify-between">
+
+        <p class="text-lg font-medium text-gray-700">
+
+            {{ totalCoupons() }}
+
+            <span class="font-normal">
+                {{"DETAIL.FOUND" | translate}}
+            </span>
+
+        </p>
+
+        <mat-button-toggle-group
+            [value]="view()"
+            hideSingleSelectionIndicator>
+
+            <mat-button-toggle
+                value="list"
+                (click)="changeView('list')">
+
+                <mat-icon>view_list</mat-icon>
+
+            </mat-button-toggle>
+
+            <mat-button-toggle
+                value="grid"
+                (click)="changeView('grid')">
+
+                <mat-icon>grid_view</mat-icon>
+
+            </mat-button-toggle>
+
+        </mat-button-toggle-group>
+
+    </div>
+
+    @if (loading()) {
+
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+            @for (card of skeletonCards; track $index) {
+
+                <div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm">
+
+                    <!-- Imagen -->
+
+                    <ngx-skeleton-loader
+                        [theme]="{
+                            height:'180px',
+                            width:'100%',
+                            margin:'0',
+                            'border-radius':'0'
+                        }">
+                    </ngx-skeleton-loader>
+
+                    <div class="space-y-4 p-6">
+
+                        <ngx-skeleton-loader
+                            [theme]="{
+                                height:'22px',
+                                width:'70%'
+                            }">
+                        </ngx-skeleton-loader>
+
+                        <ngx-skeleton-loader
+                            [theme]="{
+                                height:'16px',
+                                width:'100%'
+                            }">
+                        </ngx-skeleton-loader>
+
+                        <ngx-skeleton-loader
+                            [theme]="{
+                                height:'16px',
+                                width:'90%'
+                            }">
+                        </ngx-skeleton-loader>
+
+                        <ngx-skeleton-loader
+                            [theme]="{
+                                height:'42px',
+                                width:'130px',
+                                'border-radius':'9999px'
+                            }">
+                        </ngx-skeleton-loader>
+
+                    </div>
+
+                </div>
+
+            }
+
+        </div>
+
+    }
+
+</section>

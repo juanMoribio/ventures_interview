@@ -1,0 +1,39 @@
+.brand {
+
+    padding: 70px 30px;
+    background: linear-gradient(
+        180deg,
+        #1737d9 0%,
+        #2244ff 45%,
+        #ffffff 100%
+    );
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+.cards{
+
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+
+    margin:50px 0;
+}
+
+.brand-card{
+    width:220px;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.content{
+    padding:16px;
+}
+
+button{
+    border-radius:30px;
+}

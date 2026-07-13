@@ -1,0 +1,17 @@
+<section class="flex flex-col items-center gap-6">
+
+    <h2 class="text-5xl font-bold text-gray-900">
+        {{ 'MENU.TITLE' | translate }}
+    </h2>
+
+    <div class="flex justify-center w-1/2">
+        <mat-chip-listbox  class="flex flex-wrap justify-center gap-2">
+            @for (category of categories(); track category.idMenu) {
+            <mat-chip-option>
+                {{ category["descripción"] }}
+            </mat-chip-option>
+            }
+        </mat-chip-listbox>
+    </div>
+
+</section>

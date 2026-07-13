@@ -1,0 +1,40 @@
+<footer class="footer bg-white">
+
+    <div class="links">
+
+        <a href="#">
+            {{ 'FOOTER.ABOUT' | translate }}
+        </a>
+
+        <a href="#">
+            {{ 'FOOTER.PRIVACY' | translate }}
+        </a>
+
+        <a href="#">
+            {{ 'FOOTER.TERMS' | translate }}
+        </a>
+
+        <a href="#">
+            {{ 'FOOTER.CONTACT' | translate }}
+        </a>
+
+    </div>
+
+    <mat-form-field appearance="outline" class="language-select">
+
+        <mat-select
+            [(ngModel)]="language">
+
+            @for(lang of languageService.languages; track lang.code){
+
+                <mat-option [value]="lang.code" (click)="changeLanguage(lang.code)">
+                    {{ lang.label }}
+                </mat-option>
+
+            }
+
+        </mat-select>
+
+    </mat-form-field>
+
+</footer>

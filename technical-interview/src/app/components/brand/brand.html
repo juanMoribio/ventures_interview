@@ -1,0 +1,43 @@
+<section class="brand">
+
+    <h3 class="text-center text-4xl leading-none text-white">
+        {{ 'BRAND.TITLE' | translate }}
+    </h3>
+
+    <div class="cards">
+        @for(card of cards; track $index){
+
+            <mat-card class="brand-card">
+
+                <ngx-skeleton-loader
+                    [theme]="{
+                        height:'140px',
+                        width:'100%',
+                        borderRadius:'0'
+                    }">
+                </ngx-skeleton-loader>
+
+                <div class="content">
+
+                    <ngx-skeleton-loader
+                        [theme]="{
+                            width:'70px',
+                            height:'20px',
+                            borderRadius:'20px'
+                        }">
+                    </ngx-skeleton-loader>
+
+                    <ngx-skeleton-loader
+                        [count]="3"
+                        appearance="line">
+                    </ngx-skeleton-loader>
+                </div>
+            </mat-card>
+        }
+    </div>
+
+    <button mat-flat-button color="primary">
+      {{ 'HEADER.LINK' | translate }}
+    </button>
+
+</section>

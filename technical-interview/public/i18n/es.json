@@ -1,0 +1,33 @@
+{
+    "HEADER": {
+        "LOGIN": "Iniciar sesión",
+        "LINK": "Vincula tu tarjeta"
+    },
+    "TABLE": {
+        "TITLE": "Vincula tu <span class=\"block lg:inline\">tarjeta empresarial</span> <br> para <span class=\"text-blue-600\">desbloquear ofertas de cashback</span>",
+        "NO_LINKED_HEAD": "No es necesario vincular una tarjeta",
+        "LINKED_HEAD": "Vincula tu tarjeta para obtener",
+        "BENEFITS": {
+            "COUPONS": "Cupones instantáneos",
+            "VISA": "Acceso completo a los beneficios de Visa SavingsEdge",
+            "TRACKING": "Seguimiento del cashback",
+            "MERCHANT": "Búsqueda de comercios",
+            "OFFERS": "Ofertas de cashback"
+        }
+    },
+    "MENU": {
+        "TITLE": "Explora cupones al instante"
+    },
+    "DETAIL": {
+      "FOUND":"Cupones encontrados"
+    },
+    "BRAND": {
+        "TITLE":"Desbloquea todo el potencial de"
+    },
+    "FOOTER": {
+        "ABOUT": "Acerca del producto",
+        "PRIVACY": "Aviso de privacidad",
+        "TERMS": "Términos de uso",
+        "CONTACT": "Contáctanos"
+    }
+}
