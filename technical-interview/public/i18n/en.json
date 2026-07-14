@@ -20,7 +20,11 @@
         "TITLE": "Explore Instant Coupons"
     },
     "DETAIL": {
-      "FOUND":"Coupons found"
+      "FOUND":"Coupons found",
+      "BUTTON": "Learn more",
+      "SHOW_MORE": "More Instant Coupons",
+      "GET_COUPON": "Get Coupon",
+      "INSTANT_COUPON": "Instant Coupon"
     },
     "BRAND": {
         "TITLE":"Unlock the full power of"

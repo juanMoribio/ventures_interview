@@ -1,99 +1,138 @@
-<section class="mx-auto max-w-7xl px-6 py-10">
+<section class="mx-auto max-w-6xl px-6 py-10">
 
   <div class="mb-8 flex items-center justify-between">
 
-        <p class="text-lg font-medium text-gray-700">
+    <p class="text-lg font-medium text-gray-700">
 
-            {{ totalCoupons() }}
+      {{ totalCoupons() }}
 
-            <span class="font-normal">
-                {{"DETAIL.FOUND" | translate}}
-            </span>
+      <span class="font-normal">
+        {{"DETAIL.FOUND" | translate}}
+      </span>
 
-        </p>
+    </p>
 
-        <mat-button-toggle-group
-            [value]="view()"
-            hideSingleSelectionIndicator>
+    <mat-button-toggle-group [value]="view()" hideSingleSelectionIndicator>
 
-            <mat-button-toggle
-                value="list"
-                (click)="changeView('list')">
+      <mat-button-toggle value="list" (click)="changeView('list')">
+        <mat-icon>view_list</mat-icon>
+      </mat-button-toggle>
 
-                <mat-icon>view_list</mat-icon>
+      <mat-button-toggle value="grid" (click)="changeView('grid')">
+        <mat-icon>grid_view</mat-icon>
+      </mat-button-toggle>
 
-            </mat-button-toggle>
+    </mat-button-toggle-group>
 
-            <mat-button-toggle
-                value="grid"
-                (click)="changeView('grid')">
+  </div>
 
-                <mat-icon>grid_view</mat-icon>
-
-            </mat-button-toggle>
-
-        </mat-button-toggle-group>
-
-    </div>
-
+  <div class="gap-8"
+  [class.grid]="view() === 'grid'"
+  [class.sm:grid-cols-2]="view() === 'grid'"
+  [class.lg:grid-cols-4]="view() === 'grid'"
+  [class.flex]="view() === 'list'"
+  [class.flex-col]="view() === 'list'">
     @if (loading()) {
+    @for (card of skeletonCards; track $index) {
 
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm">
 
-            @for (card of skeletonCards; track $index) {
+      <!-- Imagen -->
 
-                <div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm">
-
-                    <!-- Imagen -->
-
-                    <ngx-skeleton-loader
-                        [theme]="{
+      <ngx-skeleton-loader [theme]="{
                             height:'180px',
                             width:'100%',
                             margin:'0',
                             'border-radius':'0'
                         }">
-                    </ngx-skeleton-loader>
+      </ngx-skeleton-loader>
 
-                    <div class="space-y-4 p-6">
+      <div class="space-y-4 p-6">
 
-                        <ngx-skeleton-loader
-                            [theme]="{
+        <ngx-skeleton-loader [theme]="{
                                 height:'22px',
                                 width:'70%'
                             }">
-                        </ngx-skeleton-loader>
+        </ngx-skeleton-loader>
 
-                        <ngx-skeleton-loader
-                            [theme]="{
+        <ngx-skeleton-loader [theme]="{
                                 height:'16px',
                                 width:'100%'
                             }">
-                        </ngx-skeleton-loader>
+        </ngx-skeleton-loader>
 
-                        <ngx-skeleton-loader
-                            [theme]="{
+        <ngx-skeleton-loader [theme]="{
                                 height:'16px',
                                 width:'90%'
                             }">
-                        </ngx-skeleton-loader>
+        </ngx-skeleton-loader>
 
-                        <ngx-skeleton-loader
-                            [theme]="{
+        <ngx-skeleton-loader [theme]="{
                                 height:'42px',
                                 width:'130px',
                                 'border-radius':'9999px'
                             }">
-                        </ngx-skeleton-loader>
+        </ngx-skeleton-loader>
 
-                    </div>
+      </div>
 
-                </div>
-
-            }
-
-        </div>
+    </div>
 
     }
+    }@else {
+    @for (brand of listCoupons(); track $index) {
+
+    <mat-card class="coupon-card">
+
+      <div class="logo-container">
+        <img [src]="brand.imagen" [alt]="brand.nombreMarca" class="logo">
+      </div>
+
+      <mat-card-content>
+
+        <span class="badge">
+          {{ 'DETAIL.INSTANT_COUPON' | translate }}
+        </span>
+
+        <h3 class="title">
+          {{ brand.nombreMarca }}
+        </h3>
+
+        <p class="description">
+          {{ brand['descripción'] }}
+        </p>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+
+        <button mat-button color="primary">
+
+          {{ 'DETAIL.GET_COUPON' | translate }}
+
+          <mat-icon iconPositionEnd>
+            arrow_forward
+          </mat-icon>
+
+        </button>
+
+      </mat-card-actions>
+
+    </mat-card>
+
+    }
+    }
+  </div>
+
+  @if (!loading() && hasMore()) {
+  <div class="mt-12 flex justify-center">
+    <button mat-button class="show-more" (click)="showMore()">
+      {{ 'DETAIL.SHOW_MORE' | translate }}
+      <mat-icon iconPositionEnd>
+        expand_more
+      </mat-icon>
+    </button>
+  </div>
+  }
 
 </section>

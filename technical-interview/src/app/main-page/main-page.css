@@ -1,4 +1,4 @@
-.main-bg{
+.main-bg {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -9,24 +9,18 @@
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 0;
 
   background:
-    radial-gradient(
-      circle at 10% 5%,
-      rgba(84, 127, 255, 0.20),
-      transparent 25%
-    ),
-    radial-gradient(
-      circle at 90% 20%,
-      rgba(67, 98, 238, 0.25),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 50% 100%,
-      rgba(120, 150, 255, 0.30),
-      transparent 35%
-    );
+    radial-gradient(circle at 10% 5%, rgba(84,127,255,.20), transparent 10%),
+    radial-gradient(circle at 90% 20%, rgba(67,98,238,.25), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(120,150,255,.30), transparent 35%);
 
-  filter: blur(20px);
+  filter: blur(10px);
   pointer-events: none;
+}
+
+.main-bg > * {
+  position: relative;
+  z-index: 1;
 }

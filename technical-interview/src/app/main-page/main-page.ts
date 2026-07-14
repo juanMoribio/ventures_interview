@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Header } from '../components/header/header';
 import { Table } from '../components/table/table';
 import { Menu } from '../components/menu/menu';
@@ -15,4 +15,9 @@ import { Detail } from '../components/detail/detail';
 })
 export class MainPage {
 
+  public categorySelected = signal<number>(0);
+
+  onCategorySelected(idMenu: number): void{
+    this.categorySelected.set(idMenu);
+  }
 }

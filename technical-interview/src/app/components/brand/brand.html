@@ -1,43 +1,67 @@
 <section class="brand">
+  <div class="mx-auto max-w-7xl">
+    <h2 class="mb-12 text-center text-4xl font-semibold text-white">
+      {{ 'BRAND.TITLE' | translate }}
+    </h2>
 
-    <h3 class="text-center text-4xl leading-none text-white">
-        {{ 'BRAND.TITLE' | translate }}
-    </h3>
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      @if (loading()) {
+      @for(card of skeletonCards; track $index){
 
-    <div class="cards">
-        @for(card of cards; track $index){
+      <mat-card class="overflow-hidden rounded-2xl shadow-lg">
 
-            <mat-card class="brand-card">
+        <ngx-skeleton-loader [theme]="{
+                                      height:'120px',
+                                      width:'100%',
+                                      margin:'0',
+                                      'border-radius':'0'
+                                  }">
+        </ngx-skeleton-loader>
+        <div class="space-y-3 p-4">
+          <ngx-skeleton-loader [theme]="{
+                                          width:'80px',
+                                          height:'16px'
+                                      }">
+          </ngx-skeleton-loader>
+          <ngx-skeleton-loader appearance="line" [count]="3">
+          </ngx-skeleton-loader>
+        </div>
 
-                <ngx-skeleton-loader
-                    [theme]="{
-                        height:'140px',
-                        width:'100%',
-                        borderRadius:'0'
-                    }">
-                </ngx-skeleton-loader>
+      </mat-card>
 
-                <div class="content">
+      }
 
-                    <ngx-skeleton-loader
-                        [theme]="{
-                            width:'70px',
-                            height:'20px',
-                            borderRadius:'20px'
-                        }">
-                    </ngx-skeleton-loader>
+      } @else {
+      @for (brand of brands(); track $index) {
 
-                    <ngx-skeleton-loader
-                        [count]="3"
-                        appearance="line">
-                    </ngx-skeleton-loader>
-                </div>
-            </mat-card>
-        }
+      <mat-card class="overflow-hidden rounded-2xl shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+
+        <div class="flex h-32 items-center justify-center border-b border-gray-100 bg-white p-6">
+          <img [src]="brand.imagen" [alt]="brand.nombreMarca" class="max-h-16 max-w-36 object-contain">
+        </div>
+
+        <div class="space-y-3 p-5">
+          <span class="inline-flex rounded bg-yellow-200 px-2 py-1 text-xs font-semibold text-yellow-900">
+            {{ 'DETAIL.INSTANT_COUPON' | translate }}
+          </span>
+          <h3 class="line-clamp-2 text-lg font-semibold text-gray-900">
+            {{ brand.nombreMarca }}
+          </h3>
+          <p class="line-clamp-3 text-sm leading-6 text-gray-600">
+            {{ brand['descripción'] }}
+          </p>
+        </div>
+      </mat-card>
+      }
+      }
     </div>
 
-    <button mat-flat-button color="primary">
-      {{ 'HEADER.LINK' | translate }}
-    </button>
+    <div class="mt-12 flex justify-center">
+      <button mat-flat-button color="primary">
+        {{ 'HEADER.LINK' | translate }}
+      </button>
+    </div>
+
+  </div>
 
 </section>

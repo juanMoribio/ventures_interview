@@ -19,7 +19,11 @@
         "TITLE": "Explora cupones al instante"
     },
     "DETAIL": {
-      "FOUND":"Cupones encontrados"
+      "FOUND":"Cupones encontrados",
+      "BUTTON": "Más información",
+      "SHOW_MORE": "Ver más cupones",
+      "GET_COUPON": "Obtener cupón",
+      "INSTANT_COUPON": "Cupón instantáneo"
     },
     "BRAND": {
         "TITLE":"Desbloquea todo el potencial de"

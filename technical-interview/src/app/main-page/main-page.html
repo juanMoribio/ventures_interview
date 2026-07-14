@@ -2,10 +2,10 @@
     <div class="main-bg">
         <app-header />
         <app-table />
-        <app-menu />
-        <app-detail />
+        <app-menu (categorySelected)="onCategorySelected($event)" />
+        <app-detail [idCategory]="categorySelected()" />
     </div>
-    
+
     <app-brand />
     <app-footer />
 </div>

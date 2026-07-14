@@ -4,10 +4,10 @@
         {{ 'MENU.TITLE' | translate }}
     </h2>
 
-    <div class="flex justify-center w-1/2">
+    <div class="flex justify-center lg:w-1/2 sm:w-full sm:px-4">
         <mat-chip-listbox  class="flex flex-wrap justify-center gap-2">
             @for (category of categories(); track category.idMenu) {
-            <mat-chip-option>
+            <mat-chip-option (click)="selectCategory(category)" [selected]="category.idMenu == selectedCategory()">
                 {{ category["descripción"] }}
             </mat-chip-option>
             }
