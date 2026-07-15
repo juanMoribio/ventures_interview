@@ -1,0 +1,47 @@
+<h2 mat-dialog-title class="text-center">
+  {{ 'LOGIN.TITLE' | translate }}
+</h2>
+
+<mat-dialog-content>
+  <form class="mt-4 pt-2 flex flex-col gap-4" [formGroup]="form">
+    <mat-form-field appearance="outline">
+
+      <mat-label>
+        {{ 'LOGIN.EMAIL' | translate }}
+      </mat-label>
+      <input matInput formControlName="email">
+      <mat-icon matSuffix>
+        mail
+      </mat-icon>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>
+        {{ 'LOGIN.PASSWORD' | translate }}
+      </mat-label>
+
+      <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+
+      <button mat-icon-button matSuffix type="button" (click)="hidePassword=!hidePassword">
+        <mat-icon>
+          {{hidePassword ? 'visibility_off':'visibility'}}
+        </mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary">
+      {{ 'LOGIN.LOGIN' | translate }}
+    </button>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+
+  <button mat-button mat-dialog-close>
+    {{ 'LOGIN.CANCEL' | translate }}
+  </button>
+
+</mat-dialog-actions>

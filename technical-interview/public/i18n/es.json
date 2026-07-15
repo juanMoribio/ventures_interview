@@ -33,5 +33,12 @@
         "PRIVACY": "Aviso de privacidad",
         "TERMS": "Términos de uso",
         "CONTACT": "Contáctanos"
+    },
+    "LOGIN": {
+      "TITLE": "Iniciar sesión",
+      "EMAIL": "Correo electrónico",
+      "PASSWORD": "Contraseña",
+      "LOGIN": "Ingresar",
+      "CANCEL": "Cancelar"
     }
 }

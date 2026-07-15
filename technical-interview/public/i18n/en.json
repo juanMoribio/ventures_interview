@@ -34,5 +34,12 @@
         "PRIVACY": "Privacy Statement",
         "TERMS": "Terms of Use",
         "CONTACT": "Contact Us"
+    },
+    "LOGIN": {
+      "TITLE": "Sign In",
+      "EMAIL": "Email",
+      "PASSWORD": "Password",
+      "LOGIN": "Login",
+      "CANCEL": "Cancel"
     }
 }
