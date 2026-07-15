@@ -4,7 +4,7 @@
         "LINK": "Vincula tu tarjeta"
     },
     "TABLE": {
-        "TITLE": "Vincula tu <span class=\"block lg:inline\">tarjeta empresarial</span> <br> para <span class=\"text-blue-600\">desbloquear ofertas de cashback</span>",
+        "TITLE": "Vincula tu <span class=\"block sm:inline\">tarjeta empressarial</span> para <span class=\"text-blue-600\">desbloquear ofertas de cashback</span>",
         "NO_LINKED_HEAD": "No es necesario vincular una tarjeta",
         "LINKED_HEAD": "Vincula tu tarjeta para obtener",
         "BENEFITS": {

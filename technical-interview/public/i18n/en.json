@@ -4,7 +4,7 @@
         "LINK": "Link your card"
     },
     "TABLE": {
-        "TITLE": "Link your <span class=\"block lg:inline\"> business card </span> <br> to <span class=\"text-blue-600\"> unlock cashback offers </span>",
+        "TITLE": "Link your <span class=\"block lg:inline\"> business card </span> to <span class=\"text-blue-600\"> unlock cashback offers </span>",
         "NO_LINKED_HEAD": "No card linking required",
         "LINKED_HEAD": "Link your card to get",
         "BENEFITS":{

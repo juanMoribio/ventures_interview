@@ -1,34 +1,40 @@
-<footer class="footer bg-white">
+<footer
+    class="mx-auto flex max-w-6xl flex-col gap-6 border-t border-gray-200 bg-white px-4 py-6 sm:px-6 md:flex-row md:items-center md:justify-between">
 
-    <div class="links">
+    <div class="flex flex-col items-center gap-3 text-sm text-gray-600 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start md:gap-6">
 
-        <a href="#">
+        <a href="#" class="transition-colors hover:text-blue-600">
             {{ 'FOOTER.ABOUT' | translate }}
         </a>
 
-        <a href="#">
+        <a href="#" class="transition-colors hover:text-blue-600">
             {{ 'FOOTER.PRIVACY' | translate }}
         </a>
 
-        <a href="#">
+        <a href="#" class="transition-colors hover:text-blue-600">
             {{ 'FOOTER.TERMS' | translate }}
         </a>
 
-        <a href="#">
+        <a href="#" class="transition-colors hover:text-blue-600">
             {{ 'FOOTER.CONTACT' | translate }}
         </a>
 
     </div>
 
-    <mat-form-field appearance="outline" class="language-select">
+    <mat-form-field
+        appearance="outline"
+        class="w-full sm:w-64 md:w-52">
 
-        <mat-select
-            [(ngModel)]="language">
+        <mat-select [(ngModel)]="language">
 
             @for(lang of languageService.languages; track lang.code){
 
-                <mat-option [value]="lang.code" (click)="changeLanguage(lang.code)">
+                <mat-option
+                    [value]="lang.code"
+                    (click)="changeLanguage(lang.code)">
+
                     {{ lang.label }}
+
                 </mat-option>
 
             }
